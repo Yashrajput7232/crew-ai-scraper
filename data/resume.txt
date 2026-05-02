@@ -1,0 +1,15 @@
+Name: Yash Rajput
+
+Skills:
+- Java, Spring Boot, Python, AWS, Kubernetes, Kafka
+
+Experience:
+- Built GenAI automation reducing manual work by 90%
+- Developed cloud-native monitoring system on EKS
+
+Projects:
+- Log Management System (Spring Boot + MongoDB)
+
+Preferences:
+- Backend roles
+- Distributed systems
