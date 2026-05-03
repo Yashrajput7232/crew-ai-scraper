@@ -1,2 +1,55 @@
-We are hiring a Backend Engineer with experience in Java, Spring Boot,
-microservices, Kafka, and AWS. Knowledge of distributed systems is a plus.
+About the job
+Overview
+
+Microsoft is on a mission to empower every person and every organization on the planet to achieve more. Our culture is centered on embracing a growth mindset, a theme of inspiring excellence, and encouraging teams and leaders to bring their best each day. In doing so, we create life-changing innovations that impact billions of lives around the world. You can help us to achieve our mission.
+
+Microsoft 365 Copilot Chat is the conversational core of Microsoft Copilot —where enterprise AI meets productivity. It’s the default interface through which users summarize meetings, draft emails, generate insights from enterprise data, and coordinate with teams using natural language. As Microsoft accelerates its AI-first strategy, Chat isn’t just a feature—it’s the gateway. It’s the most visible and critical surface for AI-powered work.
+
+As a Software Engineer, you will contribute to building next-generation conversational experiences for Microsoft 365 Copilot Chat. You’ll work on features and engineering systems that enable rapid iteration, continuous deployment, and resilient live-site operations. You’ll learn to automate workflows, improve release processes, and leverage AI-driven solutions to optimize performance and elevate user experience. This role is perfect for engineers eager to grow, solve complex problems, and collaborate across disciplines to deliver impactful solutions at scale..
+
+What Makes This Role Unique
+
+Impact at Scale: Contribute to one of Microsoft’s most visible AI-powered experiences used by millions globally.
+
+Engineering Systems Focus: Improve release systems, experimentation platforms, and live-site reliability for a flagship product.
+
+AI-Driven Innovation: Apply cutting-edge AI to transform development workflows and user experiences.
+
+Cross-Disciplinary Collaboration: Work closely with UX, AI, and platform teams to deliver breakthrough experiences.
+
+Balance Speed & Reliability: Enable rapid iteration without compromising trust and performance
+
+Microsoft’s mission is to empower every person and every organization on the planet to achieve more. As employees we come together with a growth mindset, innovate to empower others, and collaborate to realize our shared goals. Each day we build on our values of respect, integrity, and accountability to create a culture of inclusion where everyone can thrive at work and beyond.
+
+Responsibilities
+
+Work with appropriate stakeholders to determine user requirements for a feature. Supports identification of dependencies, and the development of design documents for a product feature with oversight.
+Assists and learn about breaking down work items into tasks and provides estimation.
+Build frameworks and tooling to enable rapid experimentation and data-driven analysis in production.
+Automate development workflows, release pipelines, and live-site operations to ensure efficiency and consistency. Integrate AI-driven solutions to optimize developer workflows and enhance user experience.
+With guidance, learn to create and implement code for a product, service, or feature reusing code as applicable. Assist and learn about breaking down work items into tasks and provides estimation.
+Serve as Designated Responsible Individual (DRI) to monitor systems and features for degradation, downtime, or interruptions, and executes approved steps to restore service.
+Review current developments and proactively seek new knowledge that will improve the availability, reliability, efficiency, observability, and performance of products while also driving consistency in monitoring and operations at scale. 
+
+Qualifications
+
+Required Qualifications:
+
+Bachelor's Degree in Computer Science, or related technical discipline with proven experience coding in languages including, but not limited to, C, C++, C#, Java, JavaScript, or Python
+OR equivalent experience.
+Other Requirements
+
+Ability to meet Microsoft, customer and/or government security screening requirements are required for this role. These requirements include but are not limited to the following specialized security screenings:
+
+Microsoft Cloud Background Check: This position will be required to pass the Microsoft Cloud background check upon hire/transfer and every two years thereafter.
+
+Preferred Qualifications
+
+Master's Degree in Computer Science or related technical field with proven experience coding in languages including, but not limited to, C, C++, C#, Java, JavaScript, or Python
+OR Bachelor's Degree in Computer Science or related technical field AND 2+ years technical engineering experience with coding in languages including, but not limited to, C, C++, C#, Java, JavaScript, or Python 
+OR equivalent experience.
+#agility #m365core #m365copilot #m365copilotchat #copilot
+
+This position will be open for a minimum of 5 days, with applications accepted on an ongoing basis until the position is filled.
+
+Microsoft is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, ancestry, citizenship, color, family or medical care leave, gender identity or expression, genetic information, immigration status, marital status, medical condition, national origin, physical or mental disability, political affiliation, protected veteran or military status, race, ethnicity, religion, sex (including pregnancy), sexual orientation, or any other characteristic protected by applicable local laws, regulations and ordinances. If you need assistance with religious accommodations and/or a reasonable accommodation due to a disability during the application process, read more about requesting accommodations.

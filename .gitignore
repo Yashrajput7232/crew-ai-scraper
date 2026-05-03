@@ -1,4 +1,8 @@
 .env
 venv/
 *.pyc
-__pycache__/
+__pycache__
+data/output/resume-new.pdf
+.gitignore
+data/output/resume.tex
+data/output/resume-new.tex

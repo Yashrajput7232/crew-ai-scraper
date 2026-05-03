@@ -1,15 +1,114 @@
-Name: Yash Rajput
+\documentclass[a4paper,10.8pt]{article}
+\usepackage{geometry}
+\geometry{margin=0.37in}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
 
-Skills:
-- Java, Spring Boot, Python, AWS, Kubernetes, Kafka
+\setlist[itemize]{noitemsep, topsep=0pt}
+\renewcommand{\baselinestretch}{1.0}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\titlespacing*{\subsection}{0pt}{3pt}{1pt}
 
-Experience:
-- Built GenAI automation reducing manual work by 90%
-- Developed cloud-native monitoring system on EKS
+\begin{document}
 
-Projects:
-- Log Management System (Spring Boot + MongoDB)
+\begin{center}
+    {\LARGE \textbf{YASH DILIP RAJPUT}}\\
+    \href{mailto:yashrajput.ofp@gmail.com}{yashrajput.ofp@gmail.com} \textbar
+    \href{https://www.linkedin.com/in/yashrajput7232}{LinkedIn} \textbar
+    \href{https://github.com/yashrajput7232}{GitHub} \textbar
+    \href{tel:+916281110280}{+91-6281110280}
+\end{center}
 
-Preferences:
-- Backend roles
-- Distributed systems
+\hrule
+\vspace{3 pt}
+\section*{Summary}  
+Backend Developer with strong proficiency in \textbf{Java, Python, C++, and Go}, with over 1 year of experience building and optimizing \textbf{high-performance, scalable backend systems and APIs}. Skilled in \textbf{Object-Oriented Design, Algorithms, and Designing Large Scale Data-Intensive Applications}. Delivered impact in \textbf{FinTech systems} at BNY Mellon, integrating \textbf{Generative AI} for automation and efficiency. Comfortable in \textbf{agile environments}, with strong communication and problem-solving skills, passionate about delivering client-centric, robust solutions.
+
+\vspace{3 pt}
+\hrule
+\vspace{3 pt}
+
+\section*{Education}
+\textbf{Bachelor of Engineering (B.E.) - Computer Engineering} \hfill \textbf{2024} \\
+\textbf{Pune University, Pune} \hfill \textbf{CGPA: 9.30/10}
+\vspace{3 pt}
+
+\hrule
+\vspace{3 pt}
+
+\section*{Technical Skills}
+\textbf{Programming}: Java, Python, C++, Go \textbar \space
+\textbf{Backend}: Spring Boot, Flask, Django \textbar \space
+\textbf{Frontend}: React, HTML, CSS \textbar \space
+\textbf{DevOps-Cloud}: AWS (EKS, Lambda, S3), Terraform, Kubernetes, Docker \textbar \space
+\textbf{Databases}: MongoDB (NoSQL), Oracle, MySQL (SQL) \textbar \space
+\textbf{Tools-Others}: Gen AI, Git, Kafka, Redis, Bash, JSON, Grafana
+\vspace{3 pt}
+
+\hrule
+\vspace{3 pt}
+
+\section*{Work Experience}
+
+\textbf{BNY Mellon - Software Engineer} \hfill Jul 2024 -- Present\\
+\textbf{Key Skills}: \textbf{Java, Spring Boot, Python, Backend, SQL, Gen AI, RAG, LangChain, Git, Docker, Kubernetes, Agile}
+\begin{itemize}
+    \item Designed and implemented scalable \textbf{backend infrastructure and REST APIs} using \textbf{Java Spring Boot} for \textbf{regulatory FinTech applications}, reducing reporting errors by 50\%.
+    \item Developed \textbf{agentic - AI multi-threaded onboarding tools} using Generative AI, improving automation and reducing fund setup time by 90\%.
+    \item Built an \textbf{AI-powered} \textbf{production issue remediation system} analyzing logs and metadata to suggest fixes, improving resolution time by 70\%.
+    \item Followed \textbf{CI/CD best practices} with \textbf{GitLab, Docker, Kubernetes}; ensured reliable, secure deployments in an \textbf{agile environment}.
+    \item Collaborated across global teams including product and business, aligning solutions to user requirements and regulatory needs.
+\end{itemize}
+\vspace{3 pt}
+\textbf{BNY Mellon - SDE Intern} \hfill Jan 2024 -- Jun 2024\\
+\textbf{Key Skills}: Java, Spring Boot, Spring MVC, REST APIs, Kafka, Redis, CI/CD, Docker, GitLab, Agile
+\begin{itemize}
+    \item Developed and maintained \textbf{high-performance microservices} (FAST) automating repetitive workflows for fund support teams.
+    \item Integrated \textbf{Kafka} for real-time processing and event-driven architecture.
+    \item Contributed to a real-time \textbf{fund monitoring dashboard with chatbot interface} trained on internal knowledge base.
+    \item Improved \textbf{code maintainability, scalability}, and execution time through incremental Spring Boot optimizations.
+\end{itemize}
+\vspace{3 pt}
+\textbf{Shyena Tech Yarns - Software Engineer Intern} \hfill Oct 2023 -- Dec 2023\\
+\textbf{Key Skills}: Python, Django, REST APIs, Celery, Elasticsearch, Stripe API, AI/ML
+\begin{itemize}
+    \item Developed an \textbf{AI-based call analytics system} for real-time feedback extraction, improving support efficiency by 50\%.
+    \item Created scalable \textbf{Django REST APIs}, integrating \textbf{Elasticsearch} for fast querying and response.
+    \item Optimized \textbf{Celery-based background job execution}, reducing lag and improving concurrency.
+\end{itemize}
+\vspace{3 pt}
+
+\hrule
+\section*{Projects}
+\textbf{AI-Powered Job Search Assistant} \hfill \href{https://carrer-ai.vercel.app/}{apply.ai} \textbar
+\href{https://github.com/Yashrajput7232/apply.ai}{GitHub} \\
+\textbf{Technologies: Python, Java, Kafka, React (Frontend), Gen AI/ML, RAG, MongoDB, ATS}
+\begin{itemize}
+    \item Developed a \textbf{distributed Kafka-based job aggregation system} in Python and Java.
+    \item Designed an AI model to \textbf{rank job listings}, increasing user match accuracy by 80\%.
+    \item Integrated \textbf{personalized cover letter generator} and \textbf{resume optimization system}, boosting response rates and ATS pass rates.
+    \item Applied best practices in \textbf{NoSQL database design}, and \textbf{microservice deployment}.
+\end{itemize}
+
+\vspace{3 pt}
+
+\hrule
+\vspace{3 pt}
+
+\section*{Achievements \& Certifications}
+\begin{itemize}
+ \item \textbf{Winner of AI-Hackathon at BNY Mellon}
+    \item \textbf{Finalist - Kavach 2023 Hackathon (Government of India)}, contributed to cybersecurity solutions.
+    
+\end{itemize}
+
+\hrule
+\vspace{3 pt}
+
+\section*{Extracurricular Activities}
+\begin{itemize}
+    \item \textbf{Technical Blogging} on DevOps, Cloud, and Backend systems - \href{https://medium.com/@yash.7232.rajput}{Medium}.
+\end{itemize}
+
+\end{document}
