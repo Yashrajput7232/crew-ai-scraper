@@ -1,5 +1,5 @@
 from crewai import Agent
-from llm.gemini import get_llm
+from llm import get_llm
 
 def create_job_analyzer():
     llm = get_llm()

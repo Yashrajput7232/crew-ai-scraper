@@ -1,5 +1,5 @@
 from crewai import Agent
-from llm.gemini import get_llm
+from llm import get_llm
 from services.latex_compiler import compile_latex_to_pdf
 
 

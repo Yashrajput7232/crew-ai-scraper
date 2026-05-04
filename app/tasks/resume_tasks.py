@@ -89,77 +89,186 @@ from crewai import Task
 
 
 LATEX_TEMPLATE = r"""
-\documentclass[a4paper,10pt]{article}
-\usepackage{geometry}
-\geometry{margin=0.37in}
-\usepackage{titlesec}
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper, top=0.45in, bottom=0.45in, left=0.45in, right=0.45in]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
 \usepackage{enumitem}
-\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{paracol}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lato}
 
-\setlist[itemize]{noitemsep, topsep=0pt}
+%------------------------------------------------------------
+% COLORS
+%------------------------------------------------------------
+\definecolor{msblue}{RGB}{31,78,121}
+\definecolor{accentblue}{RGB}{41,105,163}
+\definecolor{lightblue}{RGB}{210,228,242}
+\definecolor{darktext}{RGB}{26,26,26}
+\definecolor{midgray}{RGB}{90,90,90}
+\definecolor{lightgray}{RGB}{245,246,248}
+\definecolor{rulegray}{RGB}{200,210,220}
+\definecolor{taggray}{RGB}{230,236,242}
+
+\hypersetup{colorlinks=true, urlcolor=accentblue, linkcolor=accentblue}
+
+%------------------------------------------------------------
+% SPACING & LAYOUT
+%------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
 \renewcommand{\baselinestretch}{1.0}
-\titlespacing*{\section}{0pt}{4pt}{2pt}
-\titlespacing*{\subsection}{0pt}{3pt}{1pt}
 
+%------------------------------------------------------------
+% SECTION HEADERS
+%------------------------------------------------------------
+\titleformat{\section}
+  {\color{darktext}\bfseries\fontsize{10.5}{12}\selectfont\uppercase}
+  {}{0em}{}
+  [\vspace{1pt}\textcolor{rulegray}{\hrule height 0.6pt}\vspace{3pt}]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+%------------------------------------------------------------
+% CUSTOM COMMANDS
+%------------------------------------------------------------
+
+% Job entry header
+\newcommand{\jobheader}[4]{%
+  \vspace{4pt}%
+  {\bfseries\fontsize{10}{11}\selectfont\color{darktext} #1}\hfill{}\\[-1pt]
+  {\bfseries\fontsize{9.5}{11}\selectfont\color{accentblue} #2}\\[-1pt]
+  {\fontsize{8.5}{10}\selectfont\color{midgray} \faCalendar[regular]\; #3 \quad \faMapMarker*\; #4}%
+  \vspace{1pt}%
+}
+
+% Role description line
+\newcommand{\roledesc}[1]{%
+  {\fontsize{8.5}{10}\selectfont\color{midgray}\textit{#1}}\vspace{2pt}%
+}
+
+% Skill tag box
+\newcommand{\skilltag}[1]{%
+  \tikz[baseline]{\node[fill=taggray, rounded corners=2pt,
+    inner xsep=4pt, inner ysep=2pt,
+    font=\fontsize{8}{9}\selectfont\color{darktext}]{#1};}%
+  \hspace{1pt}%
+}
+
+% Achievement entry with icon
+\newcommand{\achievement}[3]{%
+  \vspace{4pt}%
+  {\color{#1}\fontsize{11}{12}\selectfont #2}\;{\bfseries\fontsize{9}{10}\selectfont\color{darktext} #3}%
+  \vspace{2pt}%
+}
+
+% Dot rating (for languages)
+\newcommand{\dotrating}[1]{%
+  \foreach \i in {1,...,5}{%
+    \ifnum\i>#1
+      {\color{lightblue}\Large\textbullet}%
+    \else
+      {\color{accentblue}\Large\textbullet}%
+    \fi
+  }%
+}
+
+% Bullet list settings
+\setlist[itemize]{
+  noitemsep, topsep=2pt, partopsep=0pt,
+  leftmargin=1.1em, label={\color{accentblue}\small\textbullet}
+}
+
+%------------------------------------------------------------
+% DOCUMENT
+%------------------------------------------------------------
 \begin{document}
 
-\begin{center}
-    {\LARGE \textbf{<<FULL_NAME>>}}\\
-    \href{mailto:<<EMAIL>>}{<<EMAIL>>} \textbar
-    \href{<<LINKEDIN_URL>>}{LinkedIn} \textbar
-    \href{<<GITHUB_URL>>}{GitHub} \textbar
-    \href{tel:<<PHONE>>}{<<PHONE>>}
-\end{center}
+%------------------------------------------------------------
+% HEADER
+%------------------------------------------------------------
+\begin{minipage}[t]{\textwidth}
+  {\fontsize{26}{28}\selectfont\bfseries\color{darktext} <<FULL_NAME>>}\\[3pt]
+  {\fontsize{12}{14}\selectfont\bfseries\color{accentblue} <<JOB_TITLE>>}\\[5pt]
+  {\fontsize{8.8}{11}\selectfont\color{midgray}
+    \faPhone\; <<PHONE>> \quad
+    \faEnvelope\; \href{mailto:<<EMAIL>>}{<<EMAIL>>} \quad
+    \faLinkedin\; \href{<<LINKEDIN_URL>>}{<<LINKEDIN_URL_TEXT>>} \quad
+    \faMapMarker*\; <<LOCATION>>
+  }
+\end{minipage}
 
-\hrule
-\vspace{3pt}
-\section*{Summary}
+\vspace{6pt}
+\textcolor{rulegray}{\hrule height 0.8pt}
+\vspace{8pt}
+
+%------------------------------------------------------------
+% TWO COLUMN BODY
+%------------------------------------------------------------
+\setlength{\columnsep}{16pt}
+\columnratio{0.62}
+\begin{paracol}{2}
+
+%============================================================
+% LEFT COLUMN
+%============================================================
+
+%--- SUMMARY ---
+\section{Summary}
+{\fontsize{9}{11.5}\selectfont\color{darktext}
 <<SUMMARY>>
+}
 
-\vspace{3pt}
-\hrule
-\vspace{3pt}
+\vspace{4pt}
 
-\section*{Education}
+%--- EXPERIENCE ---
+\section{Experience}
+
+<<EXPERIENCE>>
+
+\vspace{4pt}
+
+%--- EDUCATION ---
+\section{Education}
+
 <<EDUCATION>>
 
-\vspace{3pt}
-\hrule
-\vspace{3pt}
+\vspace{4pt}
 
-\section*{Technical Skills}
-<<TECHNICAL_SKILLS>>
+%============================================================
+% RIGHT COLUMN
+%============================================================
 
-\vspace{3pt}
-\hrule
-\vspace{3pt}
+\switchcolumn
+%--- PROJECTS ---
+\section{Projects}
 
-\section*{Work Experience}
-<<WORK_EXPERIENCE>>
-
-\vspace{3pt}
-\hrule
-\vspace{3pt}
-
-\section*{Projects}
 <<PROJECTS>>
 
-\vspace{3pt}
-\hrule
-\vspace{3pt}
+%--- SKILLS ---
+\section{Skills}
 
-\section*{Achievements \& Certifications}
-\begin{itemize}
+\vspace{4pt}
+
+\begin{minipage}{\linewidth}
+\raggedright
+<<SKILLS>>
+\end{minipage}
+
+%--- KEY ACHIEVEMENTS ---
+\section{Key Achievements}
+
 <<ACHIEVEMENTS>>
-\end{itemize}
 
-\hrule
-\vspace{3pt}
-
-\section*{Extracurricular Activities}
-\begin{itemize}
-<<EXTRACURRICULAR>>
-\end{itemize}
+\vspace{6pt}
+\end{paracol}
 
 \end{document}
 """
@@ -187,52 +296,61 @@ SUMMARY:
 - Rewrite to target this specific job
 - Highlight the most relevant skills and experience for this role
 - Keep it 3-4 lines max
-- Use \\textbf{{}} for key terms
+- Bold key terms using \\textbf{{}}
 
-TECHNICAL SKILLS:
-- Keep the exact same format: \\textbf{{Category}}: skill1, skill2 \\textbar \\space
-- Reorder categories to put most relevant ones first for this job
-- Add any skills from the resume that are missing but relevant to the JD
-- Remove skills completely irrelevant to this role
-
-WORK EXPERIENCE — For each role keep this exact format:
-\\textbf{{Company - Role}} \\hfill Start -- End\\\\
-\\textbf{{Key Skills: skill1, skill2}}
+EXPERIENCE:
+- Use this exact format for each role:
+\\jobheader{{Role Title}}{{Company Name}}{{Start -- End}}{{Location}}
 \\begin{{itemize}}
-    \\item [rewritten bullet]
+  \\item [rewritten bullet]
 \\end{{itemize}}
-
-Bullet rewriting rules:
+\\vspace{{2pt}}
 - Every bullet: [Strong Action Verb] + [What You Did] + [Measurable Result]
-- Remove vague language: "worked on", "helped with", "responsible for"
-- Every bullet must have a number or metric — if original has one keep it, improve framing
-- Bold the most important phrases using \\textbf{{}}
-- Inject JD keywords naturally into bullets where truthful
+- Bold the most important phrases in bullets
+
+EDUCATION:
+- Use this exact format for each degree:
+\\vspace{{2pt}}
+{{\\bfseries\\fontsize{{10}}{{11}}\\selectfont\\color{{darktext}} Degree Name}}\\\\[1pt]
+{{\\bfseries\\fontsize{{9.5}}{{11}}\\selectfont\\color{{accentblue}} University Name}}\\\\[1pt]
+{{\\fontsize{{8.5}}{{10}}\\selectfont\\color{{midgray}} \\faCalendar[regular]\\; Start -- End \\quad \\faMapMarker*\\; Location}}\\\\[2pt]
+{{\\fontsize{{9}}{{10}}\\selectfont\\color{{darktext}} Major/Details \\quad \\textbf{{CGPA: ...}}}}
 
 PROJECTS:
-- Keep this exact format:
-  \\textbf{{Project Name}} \\hfill \\href{{URL}}{{link}} \\textbar \\href{{github}}{{GitHub}}\\\\
-  \\textbf{{Technologies: ...}}
-  \\begin{{itemize}} ... \\end{{itemize}}
-- Reorder projects to put most relevant to this JD first
-- Rewrite bullets same as work experience rules
+- Use this exact format for each project:
+{{\\bfseries\\fontsize{{9.5}}{{11}}\\selectfont\\color{{darktext}} Project Name}}\\\\[1pt]
+{{\\fontsize{{8.5}}{{10}}\\selectfont\\color{{midgray}} \\faCalendar[regular]\\; Date \\quad \\faMapMarker*\\; Location}}\\\\[2pt]
+{{\\fontsize{{8.5}}{{10}}\\selectfont\\color{{midgray}}\\textit{{Short description}}}}
+\\begin{{itemize}}
+  \\item [bullet points]
+\\end{{itemize}}
 
-ACHIEVEMENTS: Keep \\item \\textbf{{...}} format, only include relevant ones
+SKILLS:
+- Extract all relevant skills and format them using the \\skilltag command
+- Example: \\skilltag{{Python}} \\skilltag{{Docker}} \\skilltag{{React}}
+- Separate them with a space or newline
+
+ACHIEVEMENTS:
+- Format achievements using this structure:
+\\vspace{{5pt}}
+{{\\color{{accentblue}}\\faBolt}}\\;{{\\bfseries\\fontsize{{9}}{{10}}\\selectfont\\color{{darktext}} Achievement Title}}\\\\[2pt]
+{{\\fontsize{{8.5}}{{10}}\\selectfont\\color{{darktext}} Short description or details}}
 
 === PLACEHOLDER REPLACEMENT RULES ===
 Replace every <<PLACEHOLDER>> with actual content from the resume:
 - <<FULL_NAME>> → candidate's full name
-- <<EMAIL>> → email address  
+- <<JOB_TITLE>> → desired job title or current title
+- <<PHONE>> → phone number
+- <<EMAIL>> → email address
 - <<LINKEDIN_URL>> → full LinkedIn URL
-- <<GITHUB_URL>> → full GitHub URL
-- <<PHONE>> → phone number with country code
+- <<LINKEDIN_URL_TEXT>> → display text for LinkedIn (e.g. linkedin.com/in/username)
+- <<LOCATION>> → city, country
 - <<SUMMARY>> → your rewritten summary paragraph
-- <<EDUCATION>> → education block (keep exact format from original)
-- <<TECHNICAL_SKILLS>> → rewritten skills line
-- <<WORK_EXPERIENCE>> → all experience blocks
+- <<EXPERIENCE>> → all experience blocks using \\jobheader
+- <<EDUCATION>> → all education blocks
 - <<PROJECTS>> → all project blocks
-- <<ACHIEVEMENTS>> → \\item lines only (no \\begin{{itemize}} wrapper, that's in template)
-- <<EXTRACURRICULAR>> → \\item lines only
+- <<SKILLS>> → all \\skilltag{{...}} commands
+- <<ACHIEVEMENTS>> → all achievement blocks
 
 === ABSOLUTE OUTPUT RULES ===
 - Output ONLY raw LaTeX — first character must be \\ of \\documentclass
@@ -245,7 +363,7 @@ Replace every <<PLACEHOLDER>> with actual content from the resume:
 - Do NOT fabricate any experience, numbers, or skills not in the original resume
         """,
         expected_output=(
-            "Raw LaTeX only. Starts with \\documentclass[a4paper,10pt]{article}, "
+            "Raw LaTeX only. Starts with \\documentclass[10pt,a4paper]{article}, "
             "ends with \\end{document}. Exact same document structure as the template. "
             "No markdown, no explanation, no backticks."
         ),
@@ -269,6 +387,14 @@ def create_latex_compile_task(agent, resume_write_task):
            - Run the compiler again with fixed LaTeX
         4. Retry up to 3 times.
         5. After 3 failures report the final error and the last LaTeX version.
+
+        CRITICAL INSTRUCTION FOR TOOL CALLING:
+        Because you are communicating via JSON, you MUST double-escape all backslashes in the `latex_content` argument when calling the LaTeX Compiler Tool.
+        For example:
+        - Instead of \\documentclass, you MUST write \\\\documentclass
+        - Instead of \\textbf, you MUST write \\\\textbf
+        - Instead of \\begin, you MUST write \\\\begin
+        If you do not escape the backslashes, the JSON parser will crash with a 500 Internal Server Error (invalid character 'd' in string escape code).
         """,
         expected_output="SUCCESS message with the absolute path to the compiled PDF.",
         agent=agent,

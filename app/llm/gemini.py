@@ -15,10 +15,10 @@ def get_llm():
         )
     
     return LLM(
-        # model="gemini/gemini-2.5",
+        model="gemini/gemini-2.5-flash",
         # model="gemini/gemma-3-27b",
         # model="gemini/gemma-4-31b",
-        model="gemini/gemma-4-31b-it",
+        # model="gemini/gemma-4-31b-it",
         api_key=api_key,
         temperature=0.2
     )

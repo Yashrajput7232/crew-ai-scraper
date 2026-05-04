@@ -1,114 +1,137 @@
-\documentclass[a4paper,10.8pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage{geometry}
-\geometry{margin=0.37in}
+\geometry{margin=0.40in}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
 
-\setlist[itemize]{noitemsep, topsep=0pt}
-\renewcommand{\baselinestretch}{1.0}
-\titlespacing*{\section}{0pt}{4pt}{2pt}
-\titlespacing*{\subsection}{0pt}{3pt}{1pt}
+\definecolor{msblue}{RGB}{31,78,121}
+\definecolor{darkgray}{RGB}{26,26,26}
+\definecolor{midgray}{RGB}{80,80,80}
+
+\hypersetup{colorlinks=true, urlcolor=msblue, linkcolor=msblue}
+
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.2em}
+\renewcommand{\baselinestretch}{1.05}
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+% Section header style
+\titleformat{\section}{\color{msblue}\bfseries\large}{}{0em}{}[\color{msblue}\titlerule]
 
 \begin{document}
 
+%------------------------------------------------------------
+% HEADER
+%------------------------------------------------------------
 \begin{center}
-    {\LARGE \textbf{YASH DILIP RAJPUT}}\\
-    \href{mailto:yashrajput.ofp@gmail.com}{yashrajput.ofp@gmail.com} \textbar
-    \href{https://www.linkedin.com/in/yashrajput7232}{LinkedIn} \textbar
-    \href{https://github.com/yashrajput7232}{GitHub} \textbar
-    \href{tel:+916281110280}{+91-6281110280}
+    {\LARGE \textbf{\color{msblue}YASH DILIP RAJPUT}}\\[4pt]
+    \small
+    \href{mailto:yashrajput02.scoe.comp@gmail.com}{yashrajput02.scoe.comp@gmail.com} \textbar\
+    {+91-6281110280} \textbar\
+    \href{https://www.linkedin.com/in/yashrajput7232}{linkedin.com/in/yashrajput7232} \textbar\
+    \href{https://github.com/yash7232}{github.com/yash7232}
 \end{center}
 
-\hrule
-\vspace{3 pt}
-\section*{Summary}  
-Backend Developer with strong proficiency in \textbf{Java, Python, C++, and Go}, with over 1 year of experience building and optimizing \textbf{high-performance, scalable backend systems and APIs}. Skilled in \textbf{Object-Oriented Design, Algorithms, and Designing Large Scale Data-Intensive Applications}. Delivered impact in \textbf{FinTech systems} at BNY Mellon, integrating \textbf{Generative AI} for automation and efficiency. Comfortable in \textbf{agile environments}, with strong communication and problem-solving skills, passionate about delivering client-centric, robust solutions.
+\vspace{-4pt}
 
-\vspace{3 pt}
-\hrule
-\vspace{3 pt}
+%------------------------------------------------------------
+% SUMMARY
+%------------------------------------------------------------
+\section*{Professional Summary}
+\vspace{2pt}
+Software Engineer with expertise in \textbf{Python, Java, and JavaScript}, specializing in \textbf{agentic AI systems, LLM-powered automation, and cloud-native microservices}. Experienced building GenAI pipelines with \textbf{LangChain and agent orchestration frameworks} that reduce manual effort by up to 90\%. Proven track record in \textbf{CI/CD engineering}, Kubernetes-based deployments achieving \textbf{99.9\% uptime}, and \textbf{AI-driven live-site reliability systems}. Passionate about applying cutting-edge AI to conversational experiences and developer productivity at scale.
 
-\section*{Education}
-\textbf{Bachelor of Engineering (B.E.) - Computer Engineering} \hfill \textbf{2024} \\
-\textbf{Pune University, Pune} \hfill \textbf{CGPA: 9.30/10}
-\vspace{3 pt}
+\vspace{2pt}
 
-\hrule
-\vspace{3 pt}
-
+%------------------------------------------------------------
+% TECHNICAL SKILLS
+%------------------------------------------------------------
 \section*{Technical Skills}
-\textbf{Programming}: Java, Python, C++, Go \textbar \space
-\textbf{Backend}: Spring Boot, Flask, Django \textbar \space
-\textbf{Frontend}: React, HTML, CSS \textbar \space
-\textbf{DevOps-Cloud}: AWS (EKS, Lambda, S3), Terraform, Kubernetes, Docker \textbar \space
-\textbf{Databases}: MongoDB (NoSQL), Oracle, MySQL (SQL) \textbar \space
-\textbf{Tools-Others}: Gen AI, Git, Kafka, Redis, Bash, JSON, Grafana
-\vspace{3 pt}
+\vspace{4pt}
+\begin{tabular}{@{}p{3.2cm} p{14cm}}
+\textbf{\color{msblue}Languages}        & Java, Python, JavaScript, C++ \\[2pt]
+\textbf{\color{msblue}AI / Agentic}     & LangChain, Agent Orchestration, RAG Pipelines, GenAI Automation, LLM Integration, Prompt Engineering \\[2pt]
+\textbf{\color{msblue}Backend \& APIs}  & Spring Boot, Django, Flask, REST APIs, Kafka (event-driven architecture) \\[2pt]
+\textbf{\color{msblue}DevOps \& Cloud}  & Kubernetes, Docker, CI/CD Pipelines, AWS (EKS, Lambda, S3), Terraform, GitLab \\[2pt]
+\textbf{\color{msblue}Observability}    & Prometheus, Grafana, Log Analysis, Anomaly Detection, Live-Site Monitoring \\[2pt]
+\textbf{\color{msblue}Databases}        & MongoDB, PostgreSQL, MySQL, Redis \\
+\end{tabular}
 
-\hrule
-\vspace{3 pt}
+\vspace{2pt}
 
-\section*{Work Experience}
+%------------------------------------------------------------
+% WORK EXPERIENCE
+%------------------------------------------------------------
+\section*{Professional Experience}
 
-\textbf{BNY Mellon - Software Engineer} \hfill Jul 2024 -- Present\\
-\textbf{Key Skills}: \textbf{Java, Spring Boot, Python, Backend, SQL, Gen AI, RAG, LangChain, Git, Docker, Kubernetes, Agile}
+\vspace{4pt}
+\noindent\textbf{\color{msblue}Software Engineer --- Analyst} \hfill \textit{\color{midgray}Jul 2024 -- Present}\\
+\textbf{Bank of New York Mellon} \textbar\ Pune, India
 \begin{itemize}
-    \item Designed and implemented scalable \textbf{backend infrastructure and REST APIs} using \textbf{Java Spring Boot} for \textbf{regulatory FinTech applications}, reducing reporting errors by 50\%.
-    \item Developed \textbf{agentic - AI multi-threaded onboarding tools} using Generative AI, improving automation and reducing fund setup time by 90\%.
-    \item Built an \textbf{AI-powered} \textbf{production issue remediation system} analyzing logs and metadata to suggest fixes, improving resolution time by 70\%.
-    \item Followed \textbf{CI/CD best practices} with \textbf{GitLab, Docker, Kubernetes}; ensured reliable, secure deployments in an \textbf{agile environment}.
-    \item Collaborated across global teams including product and business, aligning solutions to user requirements and regulatory needs.
+    \item \textbf{Designed and deployed an agentic AI orchestration system} for fund onboarding using LangChain-based multi-step pipelines, reducing manual processing effort by \textbf{90\%} and cutting onboarding time from days to hours.
+    \item \textbf{Built an AI-driven live-site reliability platform} leveraging log analysis, anomaly detection, and automated remediation workflows --- improving production system reliability by \textbf{70\%} and reducing mean time to resolution.
+    \item \textbf{Engineered CI/CD pipeline enhancements} using Docker, Kubernetes, and GitOps practices, achieving \textbf{99.9\% uptime} and a \textbf{90\% reduction in deployment failures} across microservices.
+    \item \textbf{Integrated Kafka for event-driven financial reporting} in a Java Spring Boot microservices platform, cutting report generation time by \textbf{60\%} and enabling real-time data processing at scale.
+    \item \textbf{Developed Complex Fund Reporting platform} (Java Spring Boot), reducing SEC/NECN/NPORT compliance reporting errors by \textbf{50\%} through automated validation pipelines.
 \end{itemize}
-\vspace{3 pt}
-\textbf{BNY Mellon - SDE Intern} \hfill Jan 2024 -- Jun 2024\\
-\textbf{Key Skills}: Java, Spring Boot, Spring MVC, REST APIs, Kafka, Redis, CI/CD, Docker, GitLab, Agile
-\begin{itemize}
-    \item Developed and maintained \textbf{high-performance microservices} (FAST) automating repetitive workflows for fund support teams.
-    \item Integrated \textbf{Kafka} for real-time processing and event-driven architecture.
-    \item Contributed to a real-time \textbf{fund monitoring dashboard with chatbot interface} trained on internal knowledge base.
-    \item Improved \textbf{code maintainability, scalability}, and execution time through incremental Spring Boot optimizations.
-\end{itemize}
-\vspace{3 pt}
-\textbf{Shyena Tech Yarns - Software Engineer Intern} \hfill Oct 2023 -- Dec 2023\\
-\textbf{Key Skills}: Python, Django, REST APIs, Celery, Elasticsearch, Stripe API, AI/ML
-\begin{itemize}
-    \item Developed an \textbf{AI-based call analytics system} for real-time feedback extraction, improving support efficiency by 50\%.
-    \item Created scalable \textbf{Django REST APIs}, integrating \textbf{Elasticsearch} for fast querying and response.
-    \item Optimized \textbf{Celery-based background job execution}, reducing lag and improving concurrency.
-\end{itemize}
-\vspace{3 pt}
 
-\hrule
+\vspace{4pt}
+\noindent\textbf{\color{msblue}Software Engineer Intern} \hfill \textit{\color{midgray}Jan 2024 -- Jun 2024}\\
+\textbf{Bank of New York Mellon} \textbar\ Pune, India
+\begin{itemize}
+    \item \textbf{Built FAST (Fund Admin Support Tool)} --- an intelligent incident management system automating \textbf{40\%} of manual resolution workflows, with real-time tracking dashboard (Spring Boot + Angular) achieving \textbf{98\% accuracy}.
+    \item \textbf{Developed a GenAI-powered conversational assistant} for financial query resolution and compliance automation, integrating LLM-based response generation with enterprise data sources.
+    \item \textbf{Implemented zero-downtime CI/CD pipelines} using GitLab and Docker, enabling continuous deployment with automated rollback capabilities across all microservices.
+\end{itemize}
+
+\vspace{4pt}
+\noindent\textbf{\color{msblue}Software Engineer Intern} \hfill \textit{\color{midgray}Oct 2023 -- Dec 2023}\\
+\textbf{Shyena Tech Yarns} \textbar\ Remote
+\begin{itemize}
+    \item \textbf{Developed an AI-powered real-time call analytics engine} using Python and NLP models to analyze live conversations, improving agent response times by \textbf{50\%} and surfacing actionable insights.
+    \item \textbf{Built high-performance Django REST APIs} with Celery-based async task execution, improving data retrieval speeds by \textbf{30\%} and background job efficiency by \textbf{40\%}.
+\end{itemize}
+
+\vspace{2pt}
+
+%------------------------------------------------------------
+% PROJECTS
+%------------------------------------------------------------
 \section*{Projects}
-\textbf{AI-Powered Job Search Assistant} \hfill \href{https://carrer-ai.vercel.app/}{apply.ai} \textbar
-\href{https://github.com/Yashrajput7232/apply.ai}{GitHub} \\
-\textbf{Technologies: Python, Java, Kafka, React (Frontend), Gen AI/ML, RAG, MongoDB, ATS}
+
+\vspace{4pt}
+\noindent\textbf{\color{msblue}AI-Powered Agentic Job Search Assistant}
 \begin{itemize}
-    \item Developed a \textbf{distributed Kafka-based job aggregation system} in Python and Java.
-    \item Designed an AI model to \textbf{rank job listings}, increasing user match accuracy by 80\%.
-    \item Integrated \textbf{personalized cover letter generator} and \textbf{resume optimization system}, boosting response rates and ATS pass rates.
-    \item Applied best practices in \textbf{NoSQL database design}, and \textbf{microservice deployment}.
+    \item \textbf{Architected a multi-agent orchestration pipeline} with autonomous sub-agents for job discovery, ranking, and outreach --- improving match accuracy by \textbf{80\%} through LLM-driven scoring algorithms.
+    \item \textbf{Automated end-to-end recruiter workflows} using real-time web scraping, Kafka integration, and personalized email generation --- cutting manual effort by \textbf{70\%} and increasing response rates by \textbf{60\%}.
+    \item \textbf{Built an ATS-optimized resume generation engine} using NLP-based JD analysis and candidate profile alignment, enhancing shortlisting probability by \textbf{50\%}.
 \end{itemize}
 
-\vspace{3 pt}
+\vspace{2pt}
 
-\hrule
-\vspace{3 pt}
+%------------------------------------------------------------
+% EDUCATION
+%------------------------------------------------------------
+\section*{Education}
 
-\section*{Achievements \& Certifications}
+\vspace{4pt}
+\noindent\textbf{Bachelor of Engineering --- Computer Engineering} \hfill \textit{\color{midgray}Pune University}\\
+CGPA: \textbf{9.30 / 10}
+
+\vspace{2pt}
+
+%------------------------------------------------------------
+% ACHIEVEMENTS
+%------------------------------------------------------------
+\section*{Achievements \& Publications}
+
 \begin{itemize}
- \item \textbf{Winner of AI-Hackathon at BNY Mellon}
-    \item \textbf{Finalist - Kavach 2023 Hackathon (Government of India)}, contributed to cybersecurity solutions.
-    
-\end{itemize}
-
-\hrule
-\vspace{3 pt}
-
-\section*{Extracurricular Activities}
-\begin{itemize}
-    \item \textbf{Technical Blogging} on DevOps, Cloud, and Backend systems - \href{https://medium.com/@yash.7232.rajput}{Medium}.
+    \item \textbf{Kavach 2023 Hackathon Finalist} --- National-level cybersecurity competition; contributed AI-based threat detection solution.
+    \item \textbf{Published Research Paper in Explainable AI (XAI)} --- \href{https://ijarsct.co.in/Paper18344.pdf}{IJARSCT journal}; applied interpretability methods to ML model decisions.
+    \item \textbf{Technical Blogger} --- DevOps \& Cloud architecture articles on \href{https://medium.com/@yash.7232.rajput}{Medium} covering Kubernetes, CI/CD, and agentic AI systems.
 \end{itemize}
 
 \end{document}

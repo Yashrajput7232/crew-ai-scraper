@@ -1,5 +1,5 @@
 from crewai import Agent
-from llm.gemini import get_llm
+from llm import get_llm
 
 
 def create_resume_writer():
